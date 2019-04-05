@@ -1,0 +1,242 @@
+/* style for story */
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+
+    .slide {
+        padding: 118px 40px;
+
+        @include breakpoint(sm) {
+            padding: 118px 44px;
+        }
+
+        @include breakpoint(md) {
+            padding: 118px 154px;
+        }
+
+        @include breakpoint(lg) {
+            padding: 118px 204px;
+        }
+
+        &-stage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center center;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: url('../img/mask.png') center top no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .meta {
+        position: relative;
+        left: 0;
+        top: 50%;
+        color: white;
+        max-width: 33.33vw;
+
+        .title {
+            font-size: 90px;
+            font-weight: bold;
+            margin: 36px 0;
+
+            &-sub {
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .desc {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .link {
+            color: $brand-primary;
+            margin-top: 36px;
+            display: block;
+
+            span,
+            .img-responsive {
+                float: left;
+            }
+
+            .img-responsive {
+                width: 36px;
+                margin: 3px 0 0 36px;
+            }
+        }
+
+        .about & {
+            max-width: 80vw;
+
+            @include breakpoint(sm) {
+                max-width: 65vw;
+            }
+
+            .title {
+                text-transform: uppercase;
+                font-size: 32px;
+                margin: 20px 0;
+
+                @include breakpoint(sm) {
+                    font-size: 60px;
+                    margin: 36px 0;
+                }
+
+                @include breakpoint(md) {
+                    font-size: 72px;
+                }
+
+                @include breakpoint(lg) {
+                    font-size: 80px;
+                }
+
+                &-sub {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                    opacity: 0.9;
+                }
+            }
+
+            .desc {
+                opacity: 0.8;
+                line-height: 1.4;
+                font-size: 14px;
+
+                @include breakpoint(sm) {
+                    font-size: 18px;
+                }
+
+                @include breakpoint(md) {}
+            }
+        }
+    }
+
+    .arrow {
+        width: 19px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &-left {
+            left: 10px;
+
+            @include breakpoint(sm) {
+                transform: translateX(100%);
+                left: 0;
+
+            }
+        }
+
+        &-right {
+            right: 10px;
+
+            @include breakpoint(sm) {
+                transform: translateX(-100%);
+                right: 0;
+            }
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: black;
+        opacity: 0.2;
+    }
+
+    .cycle-pager {
+        position: absolute;
+        bottom: 20px;
+        z-index: 9999;
+        left: 40px;
+
+        @include breakpoint(sm) {
+            left: 44px;
+        }
+
+        @include breakpoint(md) {
+            left: 154px;
+        }
+
+        @include breakpoint(lg) {
+            left: 204px;
+        }
+
+        &>span {
+            display: inline-block;
+            width: 27px;
+            height: 2px;
+            text-indent: -9999em;
+            background-color: #939393;
+            transition: all 0.2s ease-in-out;
+
+            &+span {
+                margin-left: 10px;
+            }
+
+            &.cycle-pager-active {
+                background-color: white;
+
+                .about & {
+                    background: none;
+                    width: 0;
+                    height: 0;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    border-top: 5px solid #fff;
+                }
+            }
+
+            .about & {
+                background: none;
+                margin-left: 0;
+                margin-bottom: 10px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-left: 9px solid #fff;
+                border-right: 9px solid #fff;
+                border-top: 2px solid #fff;
+
+                &:nth-child(3) {
+                    &.cycle-pager-active {
+                        border-left: 9px solid transparent;
+                        border-right: 9px solid transparent;
+                        border-top: 0px solid transparent;
+                        border-bottom: 5px solid white;
+                    }
+                }
+            }
+        }
+    }
+}

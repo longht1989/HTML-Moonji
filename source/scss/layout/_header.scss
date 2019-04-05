@@ -1,0 +1,91 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    height: 51px;
+    margin-top: 36px;
+
+    @include breakpoint(sm) {
+        margin-top: 58px;
+    }
+
+    .navbar-brand {
+        width: 156px;
+    }
+
+    .navbar-nav {
+        font-family: $font-family-sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 51px;
+
+        a {
+            color: white;
+            position: relative;
+
+            &::after {
+                transition: all 0.2s ease-in-out;
+                display: block;
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 3px;
+                background-color: transparent;
+            }
+
+            &:hover,
+            &:focus {
+                color: $brand-primary;
+
+                &::after {
+                    width: 10px;
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+
+    .navbar-default {
+        .navbar-toggle {
+            right: 20px;
+            color: white;
+
+            &:focus,
+            &:hover {
+            }
+        }
+    }
+
+    &.affix-top,
+    &.affix {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .blog &,
+    .work & {
+        margin-top: 0;
+        padding: 50px 0;
+        height: initial;
+        transition: all 0.2s ease-in-out;
+
+        &.affix-top {
+            background-color: #171717;
+            position: static;
+        }
+
+        &.affix {
+            background-color: rgba(23, 23, 23, 0.6);
+            padding: 20px 0;
+        }
+    }
+
+    .blog-detail & {
+        background-color: #1d1d1d;
+        margin-top: 0;
+        height: initial;
+        padding: 50px 0;
+    }
+}

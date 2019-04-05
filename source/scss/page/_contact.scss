@@ -1,0 +1,110 @@
+// Contact page style
+.contact {
+    &-wrap {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url('../img/mask.png') center top no-repeat;
+            background-size: contain;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: black;
+            opacity: 0.2;
+        }
+
+        .btn-group {
+            @include clearfix;
+            margin-top: 48px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            @include breakpoint(lg) {
+                margin-top: 140px;
+            }
+        }
+
+        .icon {
+            width: 33.33%;
+            float: left;
+            text-align: center;
+
+            img {
+                max-width: 46px;
+                margin: auto;
+                vertical-align: baseline;
+            }
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &__header {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin-top: 32px;
+
+        @include breakpoint(sm) {
+            max-width: 50vw;
+            margin-top: 0;
+        }
+
+        @include breakpoint(md) {
+            max-width: 40vw;
+        }
+
+        @include breakpoint(lg) {
+            max-width: 30vw;
+        }
+
+        a {
+            color: white;
+
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+
+
+        .title {
+            font-weight: bold;
+            font-size: 35px;
+            margin-bottom: 54px;
+        }
+
+        .desc {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 22px;
+        }
+
+    }
+}

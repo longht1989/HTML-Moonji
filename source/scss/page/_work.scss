@@ -1,0 +1,245 @@
+/* work */
+.work {
+    .site-content {
+        background-color: black;
+    }
+
+    &-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &-list {}
+
+    &-item {
+        position: relative;
+        cursor: pointer;
+
+        a {
+            color: white;
+
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url('../img/mask.png') center top no-repeat;
+            background-size: contain;
+        }
+
+        &:hover {
+            .work__header {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @include breakpoint(sm) {
+            width: 50%;
+        }
+
+        @include breakpoint(md) {
+            width: 33.33%;
+        }
+    }
+
+    &__header {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform-origin: center center;
+        transform: translate(-50%, -50%) scale(0);
+        text-align: center;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__title {
+        font-size: 50px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        color: white;
+    }
+
+    &__desc {
+        color: white;
+        font-size: 18px;
+        opacity: 0.8;
+    }
+
+    &--featured {
+        width: initial;
+        margin-bottom: 2px;
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .work__title {
+            margin-bottom: 0;
+            font-size: 40px;
+
+            @include breakpoint(sm) {
+                font-size: 48px;
+            }
+
+            @include breakpoint(md) {
+                font-size: 60px;
+            }
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: black;
+        opacity: 0.4;
+    }
+}
+
+/*player custom */
+.vjs-default-skin.vjs-has-started .vjs-control-bar {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.vjs-default-skin .vjs-play-control {
+    width: 21px;
+    height: 32px;
+    background: url('../img/Play Button.svg') left top no-repeat;
+    background-size: cover;
+
+    &:before {
+        content: '';
+    }
+}
+
+.vjs-play-control.vjs-control.vjs-playing {
+    background-size: contain;
+    background-image: url('../img/Pause Button.svg');
+}
+
+.vjs-default-skin.vjs-playing .vjs-play-control:before {
+    content: '';
+}
+
+.vjs-volume-bar.vjs-slider {
+    display: none;
+}
+
+.vjs-default-skin .vjs-mute-control,
+.vjs-default-skin .vjs-volume-menu-button {
+    width: 29px;
+    height: 21px;
+    background: url('../img/sound icon.svg') left top no-repeat;
+    background-size: cover;
+
+    &:before {
+        content: '';
+    }
+}
+
+.vjs-default-skin .vjs-fullscreen-control {
+    width: 28px;
+    height: 32px;
+    background: url('../img/full screen.svg') left top no-repeat;
+    background-size: cover;
+
+    &::before {
+        content: '';
+    }
+}
+
+.vjs-default-skin.vjs-fullscreen .vjs-fullscreen-control {
+    &::before {
+        content: '';
+    }
+}
+
+.vjs-default-skin .vjs-progress-control {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    top: 14px;
+    left: 31px;
+    width: calc(100% - 31px - 28px - 29px - 20px);
+}
+
+.vjs-default-skin .vjs-play-progress {
+    background: #469991;
+    height: 2px !important;
+    top: -1px !important;
+}
+
+.vjs-default-skin .vjs-slider-handle {
+    display: none;
+}
+
+.vjs-default-skin .vjs-control-bar {
+    background: transparent;
+}
+
+.vjs-default-skin .vjs-current-time,
+.vjs-time-divider,
+.vjs-default-skin .vjs-duration {
+    display: none;
+}
+
+.vjs-default-skin .vjs-mute-control.vjs-vol-0:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-0:before {
+    content: '';
+}
+
+.vjs-default-skin .vjs-mute-control {
+    right: 37px;
+    top: 3px;
+    position: absolute;
+}
+
+.lg-actions {
+
+    .lg-next,
+    .lg-prev {
+        width: 13px;
+        height: 19px;
+        background-size: cover;
+        padding: 0;
+
+
+    }
+
+    .lg-next {
+        &::before {
+            content: '';
+        }
+
+        background: url('../img/Next Arrow Button.svg') left top no-repeat;
+    }
+
+    .lg-prev {
+        &::after {
+            content: '';
+        }
+
+        background: url('../img/Prev Arrow Button.svg') left top no-repeat;
+    }
+}
+
+.lg-sub-html {
+    bottom: 40px;
+}

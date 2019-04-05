@@ -1,0 +1,53 @@
+// Variable overrides come first (without !default). Bootstrap default variables
+// come second because they use !default (they won't get set if set already) and
+// some of them depend on our overrides.
+
+/* ====================================
+   = BOOTSTARP 3.X + REPLACE VARIABLE =
+   ==================================== */
+
+@import "base/b-variables";
+@import "!framework/bootstrap";
+
+/* font */
+
+@import "../fonts/font-awesome-4.7.0/scss/font-awesome.scss";
+
+/* utilities */
+
+@import "mixin/mixins";
+
+/* base file */
+
+@import "base/b-scaffolding";
+@import "base/fonts";
+
+/* layout */
+
+@import "layout/layout";
+@import "layout/header";
+@import "layout/footer";
+
+/* component */
+
+@import "component/region";
+@import "component/story";
+@import "component/pagination";
+
+/* pages */
+
+@import "page/blog";
+@import "page/contact";
+@import "page/detail";
+@import "page/service";
+@import "page/work";
+
+/* share for all  */
+
+@import "share/share";
+
+/* helper class  */
+
+@import "helper/helper";
+
+/* Plugin */

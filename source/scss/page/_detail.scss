@@ -1,0 +1,89 @@
+/*Detail*/
+.detail {
+    &__header {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #1d1d1d;
+            bottom: 90%;
+
+            @include breakpoint(sm) {
+                bottom: 85%;
+            }
+
+            @include breakpoint(md) {
+                bottom: 77%;
+            }
+
+            @include breakpoint(lg) {
+                bottom: 70%;
+            }
+        }
+
+    }
+
+    &__avatar {
+        position: relative;
+        margin-bottom: 48px;
+
+        @include breakpoint(sm) {
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint(md) {
+            margin-bottom: 80px;
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 120px;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 32px;
+        margin-bottom: 24px;
+
+        @include breakpoint(sm) {
+            font-size: 48px;
+            margin-bottom: 32px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 64px;
+            margin-bottom: 56px;
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 80px;
+            font-size: 80px;
+        }
+    }
+
+    &__body,
+    &__desc {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #1c1c1c;
+    }
+
+    &__body {
+        margin-top: 80px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p,
+        >div {
+            margin-bottom: 20px;
+        }
+    }
+}

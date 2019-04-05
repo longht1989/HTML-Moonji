@@ -1,0 +1,332 @@
+/* ====================================
+   All region in project
+   ==================================== */
+
+
+/* zone global style */
+
+.zone {
+    padding: 32px 0;
+
+    @include breakpoint(md) {
+        padding: 88px 0;
+    }
+
+    &__header {
+        @include clearfix();
+        margin-bottom: 60px;
+    }
+
+    &__title {
+        line-height: 1.4em;
+        position: relative;
+        color: $brand-primary;
+        font-size: 22px;
+
+        @include breakpoint(sm) {
+            font-size: 28px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 36px;
+        }
+
+        @include breakpoint(lg) {
+            font-size: 48px;
+        }
+
+        &:hover {
+            color: $brand-success;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            background: $brand-primary;
+            width: 150px;
+            height: 9px;
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+        }
+    }
+
+    &__content {
+        @include clearfix();
+    }
+
+    &__icon {
+        padding: 32px 64px;
+
+        @include breakpoint(md) {
+            padding: 64px 86px;
+        }
+    }
+
+    .title {
+        font-weight: bold;
+        margin-bottom: 32px;
+        font-size: 30px;
+
+        @include breakpoint(sm) {
+            font-size: 40px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 54px;
+        }
+
+        @include breakpoint(lg) {
+            font-size: 72px;
+        }
+    }
+
+    .text {
+        margin-bottom: 32px;
+        font-size: 14px;
+
+        @include breakpoint(sm) {
+            font-size: 20px;
+        }
+    }
+
+    &-info {
+        background-color: $brand-info;
+        color: white;
+    }
+
+    h4.title {
+        font-size: 22px;
+    }
+
+    .text-listing {
+        margin-top: 64px;
+
+        @include breakpoint(md) {
+            margin-top: 0;
+        }
+
+        .title {
+            margin-bottom: 15px;
+        }
+
+        .text {
+            opacity: 0.65;
+            font-size: 16px;
+        }
+
+        >li {
+            position: relative;
+
+            &+li {
+                @include breakpoint(xs) {
+                    margin-top: 64px;
+                }
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                height: 1px;
+                background: white;
+                position: absolute;
+                top: 13px;
+                right: 100%;
+                margin-right: 20px;
+                width: 200px;
+
+                @include breakpoint(md) {
+                    width: 325px;
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                background: white;
+                border-radius: 50%;
+                position: absolute;
+                top: 9px;
+                right: 100%;
+                margin-right: 20px;
+            }
+
+            &:nth-child(2) {
+                &::before {
+                    width: 170px;
+
+                    @include breakpoint(md) {
+                        width: 150px;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                &::before {
+                    width: 70px;
+                }
+            }
+        }
+    }
+
+    &--grey {
+        background-color: #F4F5F7;
+    }
+
+    .storyListing {
+        font-size: 0;
+
+        .story {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}
+
+#zone-cover {
+    padding: 0;
+}
+
+#zone-about {
+    background: url('../img/bg-microwave.png') top right no-repeat;
+}
+
+#zone-featured {
+    padding: 64px 0;
+    position: relative;
+    overflow: hidden;
+
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../img/windmill.png') center bottom no-repeat;
+        transition: all 0.5s ease-in-out;
+        background-size: 100%;
+
+        @include breakpoint(md) {
+            background-position: center center;
+            background-size: initial;
+        }
+    }
+
+    &:hover {
+        .mask {
+            transform: scale(1.05);
+        }
+    }
+
+    @include breakpoint(md) {
+        padding: 200px 0;
+    }
+}
+
+.videoWrapper {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        top: 90%;
+        margin-top: 32px;
+        content: '';
+        display: block;
+        background: black;
+        filter: blur(50px);
+        left: 50%;
+        width: 80%;
+        height: 10%;
+        margin-left: -40%;
+        z-index: 0;
+        opacity: 0.3;
+    }
+
+}
+
+#videoContainer {
+    margin-bottom: 84px;
+    overflow: hidden;
+    border-radius: 32px;
+    z-index: 2;
+    position: relative;
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#chart {
+    @include clearfix;
+
+    .column {
+        @include clearfix();
+        position: relative;
+
+        .caption {
+            position: absolute;
+            bottom: -8px;
+            left: 26px;
+            transform: rotate(-90deg);
+            transform-origin: center left;
+            width: 600%;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+
+            @include breakpoint(sm) {
+                left: 80px;
+                font-size: 18px;
+                width: 200%;
+            }
+        }
+
+        .progress {
+            margin-bottom: 0;
+
+            &-bar {
+                background-image: linear-gradient(-180deg, #57A773 0%, #027BD3 100%);
+            }
+
+            @include breakpoint(sm) {
+                margin-left: 30px;
+            }
+        }
+
+    }
+
+    .percent {
+        color: #100E0B;
+        letter-spacing: -0.6px;
+        font-size: 18px;
+        text-align: center;
+
+        @include breakpoint(sm) {
+            font-size: 28px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 36px;
+        }
+
+        @include breakpoint(lg) {
+            font-size: 48px;
+        }
+    }
+}
+
+#zone-contact {}
+
+.form-wrap {
+    background-color: white;
+    padding: 40px;
+    color: #4B4B4B;
+
+    h3 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}

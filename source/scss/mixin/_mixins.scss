@@ -1,0 +1,200 @@
+/* ====================================
+ * Mixins
+ * ==================================== */
+
+
+/* Media queries
+ * ==================================== */
+
+@mixin breakpoint($min: 0, $max: 0) {
+    $type: type-of($min);
+    @if $type==string {
+        @if $min==xs {
+            @media (max-width: $grid-float-breakpoint-max) {
+                @content;
+            } // Mobile Devices
+        }
+        @else if $min==sm {
+            @media (min-width: $grid-float-breakpoint) {
+                @content;
+            } // Tablet Devices
+        }
+        @else if $min==md {
+            @media (min-width: $screen-md) {
+                @content;
+            } // Desktops
+        }
+        @else if $min==lg {
+            @media (min-width: $screen-lg) {
+                @content;
+            } // Widescreen Desktops
+        }
+        // Otherwise pass a warning to the compiler as to the appropriate options
+        @else {
+            @warn "The breakpoint mixin supports the following attributes: xs, sm, md, lg";
+        }
+    }
+    @else if $type==number {
+        // Allow for custom parameters for min and max size
+        $query: "all" !default;
+        @if $min !=0 and $max !=0 {
+            $query: "(min-width: #{$min}) and (max-width: #{$max})";
+        } // set both min and max
+        @else if $min !=0 and $max==0 {
+            $query: "(min-width: #{$min})";
+        } // set just min
+        @else if $min==0 and $max !=0 {
+            $query: "(max-width: #{$max})";
+        } // set just max
+        @media #{$query} {
+            @content;
+        }
+    }
+}
+
+
+/* Media screen mixin  */
+
+@mixin respond-to-xs() {
+    @media (max-width: $screen-xs-max) {
+        @content;
+    }
+}
+
+@mixin respond-to-sm() {
+    @media (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
+@mixin respond-to-sm-only() {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
+@mixin respond-to-md() {
+    @media (min-width: $screen-md-min) {
+        @content;
+    }
+}
+
+@mixin respond-to-md-only() {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        @content;
+    }
+}
+
+@mixin respond-to-lg() {
+    @media (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+
+/* Font mixin
+ * ==================================== */
+
+// variables-font-legacy
+// The exist to provide backwards compatibility for 
+// current things that use font variables. You should 
+// NOT be using these for new SCSS code.
+// legacy font weight vars
+// mixins-typography
+@mixin font-size ($font-size, $line-height) {
+    $new-size: ($font-size / 10);
+    $new-line-height: ($line-height / 10);
+    font-size: ($font-size + px);
+    font-size: ($new-size + rem);
+    line-height: ($line-height + px);
+    line-height: ($new-line-height + rem);
+}
+
+@mixin font-family ($font-name, $font-weight: $normal, $font-style: normal) {
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-family: $font-name;
+}
+
+// shorthand for font-size / line-height / font-family / font-weight
+@mixin font ($font-family, $font-size, $line-height, $font-weight: $normal, $font-style: normal) {
+    @include font-size($font-size, $line-height);
+    @include font-family($font-family, $font-weight, $font-style);
+}
+
+
+/* Tìm hiểu các mixin ở dưới đây sau  */
+
+// @mixin text-size-adjust ($value: 100%) {
+//     -moz-text-size-adjust: $value;
+//     -webkit-text-size-adjust: $value;
+//     -ms-text-size-adjust: $value;
+// }
+// // optional hyphenation
+// @mixin hyphens ($mode: auto) {
+//     word-wrap: break-word;
+//     -webkit-hyphens: $mode;
+//     -moz-hyphens: $mode;
+//     -ms-hyphens: $mode;
+//     hyphens: $mode;
+// }
+// // font-smoothing on osx
+// @mixin font-smoothing ($value: on) {
+//     @if $value == on {
+//         -webkit-font-smoothing: antialiased;
+//         -moz-osx-font-smoothing: grayscale;
+//     } @else {
+//         -webkit-font-smoothing: auto;
+//         -moz-osx-font-smoothing: auto;
+//     }
+// }
+
+/* Layout mixin
+ * ==================================== */
+
+// runaround
+// usage: when text should run around a floated element
+@mixin runaround ($direction, $top, $right, $bottom, $left) {
+    float: $direction;
+    clear: $direction;
+    margin: ($top + px) ($right + px) ($bottom + px) ($left + px);
+}
+
+@mixin no-runaround {
+    float: none;
+    clear: none;
+    margin: 0;
+}
+
+
+/* === LongHT's mixin  === */
+
+// hover focus active mixin
+@mixin haf() {
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+// transition
+@mixin transition($property, $duration, $function) {
+    transition-property: $property;
+    transition-duration: $duration + s;
+    transition-timing-function: $function;
+}
+
+// last-child item
+@mixin last-child-y {
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+// box has shadow
+@mixin has-shadow {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .16);
+}

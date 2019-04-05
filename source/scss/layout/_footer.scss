@@ -1,0 +1,49 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {}
+
+.site-footer {
+    background-color: #1d1d1d;
+    height: 244px;
+    display: flex;
+    align-items: center;
+
+    .copyright {
+        color: #878787;
+        font-size: 16px;
+    }
+
+    .social {
+        li {
+            float: left;
+
+            &+li {
+                margin-left: 32px;
+            }
+        }
+
+        a {
+            display: block;
+
+            .img-responsive {
+                height: 20px;
+                width: auto;
+                margin-top: 6px;
+            }
+        }
+    }
+
+    .home &,
+    .about &,
+    .contact & {
+        display: block;
+        background-color: transparent;
+        height: 32px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+    }
+}

@@ -1,0 +1,31 @@
+// icon sprites
+.sprites {
+    display: inline-block;
+    background: url(../img/icon-sprites.svg);
+    background-repeat: no-repeat;
+    &-arrow-target {
+        background-position: 0px 0px;
+        width: 135px;
+        height: 120px;
+    }
+    &-message-app {
+        background-position: 0px -200px;
+        width: 116px;
+        height: 120px;
+    }
+    &-orion {
+        background-position: -200px 0px;
+        width: 120px;
+        height: 120px;
+    }
+    &-radar-signal {
+        background-position: -400px 0px;
+        width: 120px;
+        height: 120px;
+    }
+    &-content-post {
+        background-position: -200px -200px;
+        width: 120px;
+        height: 120px;
+    }
+}

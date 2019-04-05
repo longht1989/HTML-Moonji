@@ -1,0 +1,40 @@
+/* ====================================
+   Customize Pagination
+   ==================================== */
+
+.pagination {
+    @include clearfix;
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+
+    li {
+        display: inline-block;
+
+        >a {
+            display: block;
+            border: none;
+            @include transition(all, 0.2, linear);
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        &.active,
+        &:hover {
+            >a {
+                background-color: #cccccc;
+                border-radius: 3px;
+                color: #323232;
+            }
+        }
+
+        &+li {
+            margin-left: 8px;
+        }
+    }
+}

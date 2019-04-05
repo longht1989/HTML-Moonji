@@ -1,0 +1,83 @@
+/* ====================================
+   Customize breadcrumbs
+   ==================================== */
+
+.breadcrumb {
+    padding: 0;
+    margin-bottom: 16px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: $border-radius-base;
+    font-size: 20px;
+    line-height: 1.1em;
+    font-weight: bold;
+    >li {
+        text-transform: normal;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        +li:before {
+            // [converter] Workaround for https://github.com/sass/libsass/issues/1115
+            $nbsp: "\00a0";
+            content: "#{$breadcrumb-separator}#{$nbsp}"; // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 5px;
+            color: $breadcrumb-color;
+            font-weight: normal;
+        }
+    }
+    >.active {
+        color: $brand-primary;
+    }
+}
+
+.breadcrumbs {
+    font-family: $font-family-special;
+    margin-bottom: 16px;
+    .cate {
+        font-size: 16px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-weight: bold;
+        a {
+            color: $brand-primary;
+            &:hover {
+                color: $brand-success;
+            }
+        }
+    }
+    .subcate {
+        a {
+            &+a {
+                &::before {
+                    content: '/';
+                    display: inline;
+                    padding: 0 16px;
+                    color: #111;
+                }
+            }
+        }
+    }
+    &--detail {
+        a {
+            &+a {
+                &::before {
+                    content: '>';
+                    display: inline;
+                    padding: 0 16px;
+                    color: #111;
+                }
+            }
+            &.active {
+                font-size: 16px;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $brand-primary;
+                &::before {
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
