@@ -48,10 +48,24 @@
         .navbar-toggle {
             right: 20px;
             color: white;
+            padding: 5px 10px;
+            top: 7px;
 
             &:focus,
             &:hover {
+                background: $brand-primary;
             }
+        }
+    }
+
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: none;
+        margin-top: 10px;
+
+        @include breakpoint(sm) {
+            background: transparent;
+            margin-top: 0;
         }
     }
 

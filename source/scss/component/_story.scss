@@ -51,12 +51,32 @@
         left: 0;
         top: 50%;
         color: white;
-        max-width: 33.33vw;
+        max-width: 80vw;
+
+        @include breakpoint(sm) {
+            max-width: 33.33vw;
+        }
+
+        @include breakpoint(md) {}
+
+        @include breakpoint(lg) {}
 
         .title {
-            font-size: 90px;
             font-weight: bold;
             margin: 36px 0;
+            font-size: 48px;
+
+            @include breakpoint(sm) {
+                font-size: 64px;
+            }
+
+            @include breakpoint(md) {
+                font-size: 72px;
+            }
+
+            @include breakpoint(lg) {
+                font-size: 90px;
+            }
 
             &-sub {
                 font-size: 35px;

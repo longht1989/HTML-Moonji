@@ -1,2 +1,0 @@
-# HTML-Hemera
-HTML-Hemera
