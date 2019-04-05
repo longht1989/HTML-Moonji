@@ -63,7 +63,7 @@
             </div>
             <div class="service-list">
                 <div class="service">
-                    <figure class="service__thumb"><img src="images/service1.jpg" alt="" class="img-responsive"></figure>
+                    <figure class="service__thumb" style="background-image: url('images/service1.jpg');"></figure>
                     <div class="overlay"></div>
                     <div class="service__header">
                         <h2 class="title">Pre production services</h2>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <figure class="service__thumb"><img src="images/service2.jpg" alt="" class="img-responsive"></figure>
+                    <figure class="service__thumb" style="background-image: url('images/service2.jpg');"></figure>
                     <div class="overlay"></div>
                     <div class="service__header">
                         <h2 class="title">production services</h2>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <figure class="service__thumb"><img src="images/service3.jpg" alt="" class="img-responsive"></figure>
+                    <figure class="service__thumb" style="background-image: url('images/service3.jpg');"></figure>
                     <div class="overlay"></div>
                     <div class="service__header">
                         <h2 class="title">POST production services</h2>
@@ -128,17 +128,34 @@
     <!-- site footer -->
     <footer id="site-footer" class="site-footer">
         <div class="container">
-            <div class="pull-left"><p class="copyright">© 2019 MOONJI Production. All Rights Reserved.</p></div>
+            <div class="pull-left">
+                <p class="copyright">© 2019 MOONJI Production. All Rights Reserved.</p>
+            </div>
             <ul class="social pull-right">
-                <li><a href="#"><img src="../App_Themes/img/facebook icon (white).svg" alt="" class="img-responsive"></a></li>
-                <li><a href="#"><img src="../App_Themes/img/instagram icon (white).svg" alt="" class="img-responsive"></a></li>
-                <li><a href="#"><img src="../App_Themes/img/youtube icon (white).svg" alt="" class="img-responsive"></a></li>
+                <li>
+                    <a href="#">
+                        <img src="../App_Themes/img/facebook icon (white).svg" alt="" class="img-responsive origin">
+                        <img src="../App_Themes/img/facebook icon.svg" alt="" class="img-responsive active">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../App_Themes/img/instagram icon (white).svg" alt="" class="img-responsive origin">
+                        <img src="../App_Themes/img/instagram icon.svg" alt="" class="img-responsive active">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../App_Themes/img/youtube icon (white).svg" alt="" class="img-responsive origin">
+                        <img src="../App_Themes/img/youtube icon.svg" alt="" class="img-responsive active">
+                    </a>
+                </li>
             </ul>
         </div>
     </footer>
     <!-- JS Global Customise -->
-    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
-    <script src="http://amondit.github.io/jquery.scrollsteps.js/jquery.scrollsteps-full-min.js"></script>
+    <script src="../Jscripts/vendor/jquery.cycle2.js"></script>
+    <script src="../Jscripts/vendor/jquery.scrollsteps-full-min.js"></script>
     <script src="../Jscripts/custom.js"></script>
 </body>
 

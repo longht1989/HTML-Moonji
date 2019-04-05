@@ -50,8 +50,10 @@ $(function() {
         }
     });
     // lightbox
-    $('.work-wrap').lightGallery({
-        selector: '.work-item',
-        videojs: true
-    });
+    if ($('body').hasClass('work')) {
+        $('.work-wrap').lightGallery({
+            selector: '.work-item',
+            videojs: true
+        });
+    }
 });

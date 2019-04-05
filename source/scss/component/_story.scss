@@ -10,6 +10,7 @@
 
     .slide {
         padding: 118px 40px;
+        z-index: 0 !important;
 
         @include breakpoint(sm) {
             padding: 118px 44px;
