@@ -14,9 +14,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../App_Themes/img/favicon.ico">
+    <link rel="shortcut icon" href="../App_Themes/img/favicon.png">
     <!-- CSS Customization -->
     <link href="https://fonts.googleapis.com/css?family=Hind+Guntur:400,700|Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
+    <link href="../App_Themes/css/vendor/video-js.css" rel="stylesheet">
     <link rel="stylesheet" href="../App_Themes/css/moonji.min.css">
     <!-- JS modernizr + Jquery + Components JS-->
     <script src="../Jscripts/moonji.min.js"></script>
@@ -52,24 +54,44 @@
     <!-- site content -->
     <main id="site-content" class="site-content site-index">
         <div class="slideshow">
-            <div class="slide" data-src="images/slide0.png">
-                <div class="slide-img" alt=""></div>
+            <div class="slide slideVideo" data-src="images/slide0.png">
+                <div class="slide-stage" style="background-image: url('images/slide0.png');">
+                    <div class="overlay"></div>
+                    <video id="slideVideo0" src="videos/video0.mp4" poster="images/slide0.png" autoplay="" muted="" loop=""></video>
+                </div>
                 <div class="meta" href="#">
                     <h3 class="title-sub">Based in Yangon we offer</h3>
                     <h2 class="title">Full Service Production</h2>
-                    <a class="btn btn-border">Play Showreel</a>
+                    <a class="btn btn-border" data-sub-html="MOONJI SHOWREEL" data-poster="images/service0.jpg" data-html="#video0">Play Showreel</a>
                 </div>
             </div>
             <div class="slide" data-src="images/slide1.png">
-                <div class="slide-img" alt=""></div>
+                <div class="slide-stage" style="background-image: url('images/slide1.png');"></div>
+                <div class="overlay"></div>
                 <div class="meta" href="#">
                     <h2 class="title">STILL/LIFE</h2>
                     <h3 class="desc">Documentry</h3>
                     <a href="#" class="link"><span>Play Showreel</span> <img src="../App_Themes/img/Arrow_Expand(View Project).svg" alt="" class="img-responsive"></a>
                 </div>
             </div>
-            <div class="slide-stage" style="background-image: url('images/slide0.png');></div>
-            <div class=" overlay"></div>
+            <div class="slide" data-src="images/slide2.jpg">
+                <div class="slide-stage" style="background-image: url('images/slide2.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="meta" href="#">
+                    <h2 class="title">STILL/LIFE</h2>
+                    <h3 class="desc">Documentry</h3>
+                    <a href="#" class="link"><span>Play Showreel</span> <img src="../App_Themes/img/Arrow_Expand(View Project).svg" alt="" class="img-responsive"></a>
+                </div>
+            </div>
+            <div class="slide" data-src="images/slide3.jpg">
+                <div class="slide-stage" style="background-image: url('images/slide3.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="meta" href="#">
+                    <h2 class="title">STILL/LIFE</h2>
+                    <h3 class="desc">Documentry</h3>
+                    <a href="#" class="link"><span>Play Showreel</span> <img src="../App_Themes/img/Arrow_Expand(View Project).svg" alt="" class="img-responsive"></a>
+                </div>
+            </div>
             <!-- pager -->
             <div class="cycle-pager"></div>
             <!-- control -->
@@ -79,6 +101,13 @@
             <div class="browse next">
                 <img src="../App_Themes/img/Next Arrow Button.svg" class="arrow img-responsive arrow-right" />
             </div>
+        </div>
+        <!-- Hidden video div -->
+        <div style="display:none;" id="video0">
+            <video class="lg-video-object lg-html5 video-js vjs-default-skin" controls preload="none">
+                <source src="videos/video0.mp4" type="video/mp4" autoplay="false">
+                Your browser does not support HTML5 video.
+            </video>
         </div>
     </main>
     <!-- site footer -->
@@ -109,6 +138,9 @@
     <!-- JS Global Customise -->
     <script src="../Jscripts/vendor/jquery.cycle2.js"></script>
     <script src="../Jscripts/vendor/jquery.scrollsteps-full-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lg-video@1.2.2/dist/lg-video.min.js"></script>
+    <script src="../Jscripts/vendor/video.js"></script>
     <script src="../Jscripts/custom.js"></script>
 </body>
 

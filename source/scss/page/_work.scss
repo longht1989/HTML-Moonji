@@ -41,6 +41,13 @@
                 transform: translate(-50%, -50%) scale(1);
                 opacity: 1;
             }
+
+            .work__video {
+
+                video {
+                    opacity: 1;
+                }
+            }
         }
 
         @include breakpoint(sm) {
@@ -76,6 +83,22 @@
         opacity: 0.8;
     }
 
+    &__video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        video {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
     &--featured {
         width: initial;
         margin-bottom: 2px;
@@ -90,6 +113,8 @@
         .work__title {
             margin-bottom: 0;
             font-size: 40px;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
 
             @include breakpoint(sm) {
                 font-size: 48px;
@@ -97,6 +122,12 @@
 
             @include breakpoint(md) {
                 font-size: 60px;
+            }
+        }
+
+        &:hover {
+            .work__title {
+                opacity: 1;
             }
         }
     }
@@ -215,28 +246,95 @@
 
     .lg-next,
     .lg-prev {
-        width: 13px;
-        height: 19px;
-        background-size: cover;
         padding: 0;
+        width: initial;
+        background-color: transparent;
+        transform: translateY(-50%);
 
-
+        &.hoverPrev,
+        &.hoverNext {
+            .lg-direction {
+                @include breakpoint(md) {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
     }
 
     .lg-next {
         &::before {
+            display: block;
+            background-size: cover;
             content: '';
+            width: 13px;
+            height: 19px;
+            background: url('../img/Next Arrow Button.svg') left top no-repeat;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -10px;
         }
 
-        background: url('../img/Next Arrow Button.svg') left top no-repeat;
+        .lg-direction {
+            padding-right: 30px;
+        }
     }
 
     .lg-prev {
-        &::after {
-            content: '';
+        .lg-direction {
+            padding-left: 30px;
         }
 
-        background: url('../img/Prev Arrow Button.svg') left top no-repeat;
+        &::after {
+            display: block;
+            background-size: cover;
+            content: '';
+            width: 13px;
+            height: 19px;
+            background: url('../img/Prev Arrow Button.svg') left top no-repeat;
+            position: absolute;
+            left: 0;
+            top: 50%;
+        }
+    }
+
+    .lg-direction {
+        max-width: 290px;
+        overflow: hidden;
+        font-family: $font-family-sans-serif;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+
+        .work__thumb {
+            margin: 20px 0;
+        }
+
+        .work__title {
+            font-weight: normal;
+            font-size: 16px;
+        }
+    }
+}
+
+.lg-video-cont {
+    transition: all 0.5s ease-in-out;
+
+    &.hoverNext {
+        @include breakpoint(md) {
+            transform-origin: left center;
+            margin-left: -10%;
+            width: 50%;
+        }
+    }
+
+    &.hoverPrev {
+        @include breakpoint(md) {
+            transform-origin: right center;
+            margin-right: -10%;
+            width: 50%;
+        }
     }
 }
 
