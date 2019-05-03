@@ -17,11 +17,11 @@
         }
 
         @include breakpoint(md) {
-            padding: 118px 154px;
+            padding: 170px 154px;
         }
 
         @include breakpoint(lg) {
-            padding: 118px 204px;
+            padding: 240px 204px;
         }
 
         &-stage {
@@ -33,6 +33,7 @@
             background-size: cover;
             background-position: center center;
             z-index: 0;
+            overflow: hidden;
 
             &::before {
                 content: '';
@@ -73,6 +74,7 @@
             font-weight: bold;
             margin: 36px 0;
             font-size: 48px;
+            font-family: 'Hind Guntur', Arial, "Helvetica Neue", Helvetica, sans-serif;
 
             @include breakpoint(sm) {
                 font-size: 64px;
@@ -131,7 +133,7 @@
                 }
 
                 @include breakpoint(md) {
-                    font-size: 72px;
+                    // font-size: 72px;
                 }
 
                 @include breakpoint(lg) {
@@ -214,10 +216,12 @@
 
         @include breakpoint(md) {
             left: 154px;
+            bottom: 50px;
         }
 
         @include breakpoint(lg) {
             left: 204px;
+            bottom: 70px;
         }
 
         &>span {

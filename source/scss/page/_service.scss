@@ -8,6 +8,8 @@
         font-size: 32px;
         line-height: 1.3;
         position: relative;
+        font-family: 'Hind Guntur', Arial, "Helvetica Neue", Helvetica, sans-serif;
+
 
         @include breakpoint(sm) {}
 
@@ -74,7 +76,7 @@
 
     .list {
         margin-top: 40px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.3;
 
         @include breakpoint(lg) {
@@ -160,6 +162,13 @@
 
         @include breakpoint(sm) {
             min-height: initial;
+        }
+
+        .service__thumb {
+            width: 100%;
+            .img-responsive {
+                width: 100%;
+            }
         }
 
         .title {

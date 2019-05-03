@@ -50,10 +50,11 @@
             color: white;
             padding: 5px 10px;
             top: 7px;
+            border-color: transparent;
 
             &:focus,
             &:hover {
-                background: $brand-primary;
+                background: transparent;
             }
         }
     }
@@ -63,10 +64,45 @@
         box-shadow: none;
         margin-top: 10px;
 
+        @include breakpoint(xs) {
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 100%;
+            right: -120%;
+            bottom: 0;
+            margin: 0;
+            padding: 16px;
+            z-index: 1;
+            display: block;
+            transition: all 0.2s ease-in-out;
+        }
+
         @include breakpoint(sm) {
             background: transparent;
             margin-top: 0;
         }
+    }
+
+    .navbar-mask {
+        z-index: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        display: none;
+    }
+
+    #navbar-close {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        color: white;
+        z-index: 2;
+        display: none;
     }
 
     &.affix-top,
@@ -100,6 +136,18 @@
         background-color: #1d1d1d;
         margin-top: 0;
         height: initial;
-        padding: 50px 0;
+        padding: 32px 0;
+        position: static;
+        transition: all 0.2s ease-in-out;
+
+        @include breakpoint(md) {
+            padding: 50px 0;
+        }
+
+        &.affix {
+            position: fixed;
+            background-color: rgba(29, 29, 29, 0.5);
+            padding: 32px 0;
+        }
     }
 }

@@ -16,12 +16,13 @@
             display: block;
             border: none;
             @include transition(all, 0.2, linear);
-            width: 24px;
+            // width: 24px;
             height: 24px;
             line-height: 24px;
             padding: 0;
             text-align: center;
             color: white;
+            padding: 0 8px;
         }
 
         &.active,

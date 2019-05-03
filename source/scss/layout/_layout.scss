@@ -236,3 +236,17 @@
         padding: 0 8px;
     }
 }
+
+.home,
+.about {
+    overflow: hidden;
+}
+
+.about {
+    .slideshow {
+        .browse {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}
